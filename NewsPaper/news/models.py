@@ -3,7 +3,7 @@ from django.db import models
 
 from django.db.models import Sum
 
-from ArticleNewsChoice import POSITIONS, article, news
+from .ArticleNewsChoice import POSITIONS, article, news
 
 
 class Author(models.Model):
@@ -59,6 +59,9 @@ class Post(models.Model):
     def preview(self):
         pre_text = 124 if len(self.post_text) > 124 else len(self.post_text)
         return self.post_text[:pre_text]+'...'
+
+    def __str__(self):
+        return f'{self.news_type.title()}: {self.post_title[:20]}'
 
 
 class PostCategory(models.Model):

@@ -1,4 +1,4 @@
-post_title1 = '7 Ways Small-Business Owners Can Cope with Inflation',
+post_title1 = '7 Ways Small-Business Owners Can Cope with Inflation'
 post_text1 = 'Small businesses that weathered the last two years face a new challenge: rising inflation. According ' \
              'to the Bureau of Labor Statistics, the all-items index rose 7.0 percent for the 12 months ending December ' \
              '2021—the highest increase in 40 years. Steps That May Help Your Business Address Inflation. ' \
