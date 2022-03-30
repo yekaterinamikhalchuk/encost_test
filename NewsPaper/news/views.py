@@ -5,9 +5,8 @@ from django.shortcuts import render
 
 class PostsList(ListView):
     model = Post
-    template_name = 'news.html'
+    template_name = 'posts.html'
     context_object_name = 'posts'
-    queryset = Post.objects.order_by('creation_date')
 
 
 class PostDetail(DetailView):
