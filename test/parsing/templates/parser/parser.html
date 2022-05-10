@@ -1,0 +1,36 @@
+{% extends 'flatpages/default.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <table>
+        <tbody>
+            {% for a in articles %}
+            <tr>
+                <td>
+                    <a href="{{ a.link }}">{{ a.domain }}</a>
+                </td>
+                <td>
+                    <p>
+                        Source: {{ a.country }}
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        Published: {{ a.create_date }}
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        Scraped: {{ a.update_date }}
+                    </p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
