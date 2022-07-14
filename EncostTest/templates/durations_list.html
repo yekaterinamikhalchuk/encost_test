@@ -1,0 +1,67 @@
+{% extends 'default.html' %}
+{% block title %}
+        Post
+{% endblock title %}
+{% block content %}
+<h1>All news</h1>
+
+<h5>Total {{ durations|length }} posts</h5>
+<form method="GET">
+    {{ filter.form }} <!-- Форму от фильтров за нас сделает Django. А вот кнопку, увы придётся делать самому -->
+    <input type="submit" value="Найти">
+</form>
+
+{% if durations %}
+        <table>
+            <tr>
+                <td>
+                    Client
+                </td>
+                <td>
+                    Equipment
+                </td>
+                <td>
+                    Mode
+                </td>
+                <td>
+                    Start date
+                </td>
+                <td>
+                    Stop date
+                </td>
+                <td>
+                    Duration
+                </td>
+            </tr>
+            {% for duration in filter.qs %}
+                <tr>
+<td>
+        {{ duration.client }}
+</td>
+
+                <td>
+                    {{ duration.equipment }}
+                </td>
+                <td>
+                    {{ duration.mode}}
+                </td>
+                <td>
+                    {{ duration.start}}
+                </td>
+                <td>
+                    {{ duration.stop}}
+                </td>
+                <td>
+                    {{ duration.minutes}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %} <!-- Если товаров нет, то говорим, что товаров нет ;) -->
+        <h2>The are no posts!</h2>
+
+
+    {% endif %}
+
+
+{% endblock content %}
